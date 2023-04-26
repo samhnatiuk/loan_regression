@@ -1,2 +1,7 @@
 # loan_regression
 Exploring possible predictors of the level of risk associated with loans found in the SBA loans dataset, and building a logistic regression class for pandas dataframes to estimate the probabilities of default for a subset of the database.
+
+The project is split into three notebooks:
+  1. data_cleaning.ipynb: Cleaning the dirty data from SBA to allow for analysis
+  2. data_exploration.ipynb. Identifying potential risk indicators for loans defaulting. To do this, we define a function (default_rate_calc) which calculates the default rate for different groups (e.g. gross disbursement), and use this to examine the most significant predictors. To visualise this analysis, we define the functions state_visualisation, binary_visualisation and continuous_visualisation at the start of the notebook. state_visualisation uses geopandas and the shapefile states.shp to visualise the default rate for the dataset grouped by state, while the other two use matplotlib to plot pie charts and bar charts respectively. 
+  3. Logistic_regression.ipynb. Building a logistic regression class for pandas dataframes, testing it on an sklearn dataset and comparing it to sklearn's LinearRegression class, and training it on a subset of the SBAnational dataset to predict whether a loan will default or not. With an F1 score of 0 .87, we can conclude that the model does a good job of predicting whether a loan will default or not. 
